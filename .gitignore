@@ -1,0 +1,71 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# debug information files
+*.dwo
+
+# Compiled test binaries (exclude source files)
+tests/test_phase*
+!tests/test_phase*.c
+
+# Compiled example binaries (exclude source files)
+examples/misc/dma_explorer
+examples/misc/dma_sweep
+*.diff
+examples/gpu_rdma/gpu_receiver
+examples/gpu_rdma/gpu_sender
+examples/misc/trace_explorer
+examples/netshare/sender
+examples/netshare/receiver
+examples/streamer/weight_streamer_tui
+
