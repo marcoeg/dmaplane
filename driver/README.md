@@ -4,20 +4,20 @@ Character device kernel module at `/dev/dmaplane`. Ioctl-driven, with per-channe
 
 ## Source Files
 
-| File | Phase | Description |
-|------|-------|-------------|
-| `main.c` | 1+ | Char device, ioctl dispatch, mmap, module init/exit |
-| `dmaplane.h` | 1+ | Kernel-internal header: structs, constants |
-| `dmabuf_rdma.{h,c}` | 2 | Buffer allocation: coherent + page-backed, NUMA placement |
-| `dmabuf_export.{h,c}` | 3 | dma-buf export: dma_buf_ops, SG table, selftest |
-| `rdma_engine.{h,c}` | 4+ | RDMA setup/teardown, MR registration, post/poll, WRITEIMM, peer QP |
-| `benchmark.{h,c}` | 4 | Loopback, ping-pong, streaming benchmarks |
-| `numa_topology.{h,c}` | 5 | Topology query, NxN bandwidth benchmark |
-| `flow_control.{h,c}` | 6 | Credit-based backpressure, sustained streaming, queue depth sweep |
-| `dmaplane_histogram.{h,c}` | 7 | Log₂ latency histogram (16 buckets, all atomic64_t) |
-| `dmaplane_debugfs.{h,c}` | 7 | debugfs counters and stats export |
-| `dmaplane_trace.{h,c}` | 7 | Tracepoint definitions and event recording |
-| `gpu_p2p.{h,c}` | 8 | GPU BAR pinning via nvidia_p2p, GPU MR, per-page ioremap_wc |
+| File | Description |
+|------|-------------|
+| `main.c` | Char device, ioctl dispatch, mmap, module init/exit |
+| `dmaplane.h` | Kernel-internal header: structs, constants |
+| `dmabuf_rdma.{h,c}` | Buffer allocation: coherent + page-backed, NUMA placement |
+| `dmabuf_export.{h,c}` | dma-buf export: dma_buf_ops, SG table, selftest |
+| `rdma_engine.{h,c}` | RDMA setup/teardown, MR registration, post/poll, WRITEIMM, peer QP |
+| `benchmark.{h,c}` | Loopback, ping-pong, streaming benchmarks |
+| `numa_topology.{h,c}` | Topology query, NxN bandwidth benchmark |
+| `flow_control.{h,c}` | Credit-based backpressure, sustained streaming, queue depth sweep |
+| `dmaplane_histogram.{h,c}` | Log₂ latency histogram (16 buckets, all atomic64_t) |
+| `dmaplane_debugfs.{h,c}` | debugfs counters and stats export |
+| `dmaplane_trace.{h,c}` | Tracepoint definitions and event recording |
+| `gpu_p2p.{h,c}` | GPU BAR pinning via nvidia_p2p, GPU MR, per-page ioremap_wc |
 
 ## Ioctl Reference
 
